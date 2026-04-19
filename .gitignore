@@ -1,0 +1,29 @@
+# Project Specific Exclusions
+DOCUMENTATION.md
+*.mp4
+*.avi
+*.mov
+*.mkv
+demo_walkthrough.mp4
+
+# Python Environment
+venv/
+__pycache__/
+*.pyc
+
+# Data and Artifacts
+frames/
+faiss_index.bin
+temporal_index.bin
+index_metadata.json
+temporal_metadata.json
+frames_metadata.json
+benchmark_report.json
+evaluation_report.json
+results.json
+results.csv
+query_history.json
+search_engine.log
+
+# Environment Variables
+.env

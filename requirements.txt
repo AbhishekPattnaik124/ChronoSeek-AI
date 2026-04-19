@@ -1,0 +1,15 @@
+opencv-python
+tqdm
+numpy
+transformers
+torch
+faiss-cpu
+psutil
+Pillow
+fastapi
+uvicorn
+streamlit
+pandas
+watchdog
+google-generativeai
+python-dotenv
