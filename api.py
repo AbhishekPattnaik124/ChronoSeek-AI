@@ -139,7 +139,8 @@ async def search(request: SearchRequest):
     
     # Prepare
     start_sec, end_sec = hms_to_seconds(request.start_time), hms_to_seconds(request.end_time)
-    meta = META_TEMPORAL if mode_to_use == "temporal" else META_FRAME
+    meta = (META_TEMPORAL if mode_to_use == "temporal" and META_TEMPORAL is not None else META_FRAME)
+    if meta is None: raise HTTPException(status_code=503, detail="Indexes not loaded")
     valid_ids = [id_ for id_, m in meta.items() if start_sec <= m["timestamp_seconds"] <= end_sec]
     
     if not valid_ids:
